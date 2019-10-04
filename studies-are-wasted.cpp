@@ -92,7 +92,7 @@ void process_layer(
 
 auto get_path_costs(const std::vector<StudyLayer>& tree) -> std::vector<Result> {
     std::vector<Result> results;
-    results.reserve(1<<12);
+    results.reserve(10000);
 
     std::vector<LayerResult> ongoing_result;
     process_layer(tree, 0, results, ongoing_result, 0, 1);
@@ -112,6 +112,13 @@ int main() {
         {302, {2.68e78, 1<<17}, 1, {1, -4}},
         {310, {8.57e77, 64}, 2, {1, -2}},
         {320, {2.68e76, 2}, 2, {1}},
+
+        // Replicants
+        {322, {9.32e77, 2}, 1, {1, -3}},
+        {330, {1.02e79, 2}, 2, {2}},
+        {340, {1.02e79, 1}, 2, {1}},
+        {345, {9.54e78, 1}, 2, {1}},
+        {351, {2.12e79, 4}, 1, {1}}
     };
 
     using std::begin;
